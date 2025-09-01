@@ -1,3 +1,9 @@
+Nom : Couturier
+Prénom : Margaux
+Classe : MMI 2 A1
+Lien Netlify : https://stunning-kelpie-760c05.netlify.app 
+
+
 # Astro Starter Kit: Basics
 
 ```sh
@@ -44,3 +50,5 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
