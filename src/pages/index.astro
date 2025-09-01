@@ -1,11 +1,39 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "../components/PlotFigure.astro";
+import penguins from "../assets/penguins.json";
+import weather from "../assets/weather.json";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<h1>Graphiques des données</h1>
+
+<h2>Penguins dataset</h2>
+
+<PlotFigure
+    options={{
+        marks: [
+            Plot.dot(penguins, {
+                x: "culmen_length_mm",
+                y: "culmen_depth_mm",
+                fill: "species",
+            }),
+        ],
+        x: { label: "Culmen length (mm)" },
+        y: { label: "Culmen depth (mm)" },
+    }}
+/>
+
+<h2>Weather dataset</h2>
+
+<PlotFigure
+	options={{
+		marks: [
+			Plot.line(weather, {
+				x: "date",
+				y: "temp_max",
+				stroke: "city",
+			}),
+		],
+		x: { label: "Date" },
+		y: { label: "Max Temperature (°C)" },
+	}}
